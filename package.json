@@ -1,5 +1,5 @@
 {
-  "name": "node-template",
+  "name": "express-testing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MISIONTIC-UN-2022/node-template.git"
+    "url": "git+https://github.com/MISIONTIC-UN-2022/Express-Testing.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MISIONTIC-UN-2022/node-template/issues"
+    "url": "https://github.com/MISIONTIC-UN-2022/Express-Testing/issues"
   },
-  "homepage": "https://github.com/MISIONTIC-UN-2022/node-template#readme",
+  "homepage": "https://github.com/MISIONTIC-UN-2022/Express-Testing#readme",
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
