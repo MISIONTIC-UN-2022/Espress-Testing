@@ -1,3 +1,15 @@
-import { sayHi } from './helloworld';
+import app from './app';
 
-sayHi();
+const main = async () => {
+  try {
+    const PORT = process.env.PORT || 3000;
+
+    app.listen(PORT, () =>
+      console.log(`Sevidor esperando por peticiones en localhost:${PORT}`)
+    );
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+main();
