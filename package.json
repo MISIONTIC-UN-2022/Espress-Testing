@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "npm run build && node ./build/index.js",
     "start:dev": "nodemon --exec babel-node src/index .js",
     "build:babel": "babel -d ./build ./src -s",

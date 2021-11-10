@@ -35,6 +35,8 @@ const TEST = {
   },
 };
 
+const ACCEPT_JSON = ['Accept', 'application/json'];
+
 describe('/calc', () => {
   const controller = 'calc';
   describe('/add', () => {
@@ -43,7 +45,7 @@ describe('/calc', () => {
     test('Código de respuesta 200', async () => {
       const { status } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.ADD);
 
       expect(status).toBe(200);
@@ -52,7 +54,7 @@ describe('/calc', () => {
     test(`'operation' debería de ser '${OPERATIONS.ADD}'`, async () => {
       const { status, body } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.ADD);
 
       expect(status).toBe(200);
@@ -63,7 +65,7 @@ describe('/calc', () => {
     test(`'result' debería de ser = ${TEST.ADD.a} + ${TEST.ADD.b} = ${TEST.ADD.result}`, async () => {
       const { status, body } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.ADD);
 
       expect(status).toBe(200);
@@ -80,7 +82,7 @@ describe('/calc', () => {
     test('Código de respuesta 200', async () => {
       const { status } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.SUB);
 
       expect(status).toBe(200);
@@ -89,7 +91,7 @@ describe('/calc', () => {
     test(`'operation' debería de ser '${OPERATIONS.SUB}'`, async () => {
       const { status, body } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.SUB);
 
       expect(status).toBe(200);
@@ -100,7 +102,7 @@ describe('/calc', () => {
     test(`'result' debería de ser = ${TEST.SUB.a} - ${TEST.SUB.b} = ${TEST.SUB.result}`, async () => {
       const { status, body } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.SUB);
 
       expect(status).toBe(200);
@@ -117,7 +119,7 @@ describe('/calc', () => {
     test('Código de respuesta 200', async () => {
       const { status } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.MUL);
 
       expect(status).toBe(200);
@@ -126,7 +128,7 @@ describe('/calc', () => {
     test(`'operation' debería de ser '${OPERATIONS.MUL}'`, async () => {
       const { status, body } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.MUL);
 
       expect(status).toBe(200);
@@ -137,7 +139,7 @@ describe('/calc', () => {
     test(`'result' debería de ser = ${TEST.MUL.a} * ${TEST.MUL.b} = ${TEST.MUL.result}`, async () => {
       const { status, body } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.MUL);
 
       expect(status).toBe(200);
@@ -154,7 +156,7 @@ describe('/calc', () => {
     test('Código de respuesta 200', async () => {
       const { status } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.DIV);
 
       expect(status).toBe(200);
@@ -163,7 +165,7 @@ describe('/calc', () => {
     test(`'operation' debería de ser '${OPERATIONS.DIV}'`, async () => {
       const { status, body } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.DIV);
 
       expect(status).toBe(200);
@@ -174,7 +176,7 @@ describe('/calc', () => {
     test(`'result' debería de ser = ${TEST.DIV.a} / ${TEST.DIV.b} = ${TEST.DIV.result}`, async () => {
       const { status, body } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.DIV);
 
       expect(status).toBe(200);
@@ -187,7 +189,7 @@ describe('/calc', () => {
     test('No debería permitir divion por 0', async () => {
       const { status, body } = await request(app)
         .post(endpoint)
-        .set('Accept', 'application/json')
+        .set(...ACCEPT_JSON)
         .send(TEST.DIV_ZERO);
 
       expect(status).toBe(400);

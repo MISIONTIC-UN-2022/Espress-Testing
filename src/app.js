@@ -9,8 +9,6 @@ app.use(compression());
 app.use(urlencoded({ extended: false }));
 app.use(json());
 
-app.get('/', (req, res) => res.json({ message: 'ok' }));
-
 setUpControllers(app);
 
 export default app;
